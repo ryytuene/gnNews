@@ -8,5 +8,9 @@
     "clickHere": "Kliknij tutaj",
     "orClickNav": " albo w przycisk w lewym górnym rogu by otworzyć listę krajów.",
     "404Text": "Strona nie istnieje.",
-    "chooseCountrySide": "Wybierz kraj newsów"
+    "chooseCountrySide": "Wybierz kraj newsów",
+    "headerPop1Title": "Największa trudność",
+    "headerPop1Text": "Pierwszy raz korzystałem z Chakra UI, więc myślę że to sprawiło mi największą trudność.",
+    "headerPop2Title": "Największa frajda",
+    "headerPop2Text": "Całe zadanie było bardzo przyjemne."
 }

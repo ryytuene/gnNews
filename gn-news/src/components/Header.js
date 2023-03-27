@@ -1,4 +1,4 @@
-import { Box, Button, Flex, IconButton, Image, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverTrigger, Portal } from "@chakra-ui/react"
+import { Box, Button, Flex, IconButton, Image, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Portal } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 import { changeDisplayFormat, changeSidebarVisibility, selectDisplayFormat } from "../store/slices/preferencesSlice";
@@ -36,11 +36,20 @@ export const Header = () => {
                                 icon={<FiInfo />} />
                         </PopoverTrigger>
                         <Portal>
-                            <PopoverContent>
+                            <PopoverContent scrollBehavior='inside' >
                                 <PopoverArrow />
                                 <PopoverCloseButton />
-                                <PopoverBody pt={10}>
-                                    {t('headerPop')}
+                                <PopoverHeader pt={10}>
+                                    {t('headerPop1Title')}
+                                </PopoverHeader>
+                                <PopoverBody>
+                                    {t('headerPop1Text')}
+                                </PopoverBody>
+                                <PopoverHeader pt={10}>
+                                    {t('headerPop2Title')}
+                                </PopoverHeader>
+                                <PopoverBody>
+                                    {t('headerPop2Text')}
                                 </PopoverBody>
                             </PopoverContent>
                         </Portal>

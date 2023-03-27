@@ -8,5 +8,9 @@
     "clickHere": "Click here",
     "orClickNav": " or the button in the upper left corner to open the list of countries.",
     "404Text": "Page does not exist.",
-    "chooseCountrySide": "Select country of the news"
+    "chooseCountrySide": "Select country of the news",
+    "headerPop1Title": "What was the hardest thing for me",
+    "headerPop1Text": "It was my first time using Chakra UI, so I think that was the hardest part for me.",
+    "headerPop2Title": "What I enjoyed the most",
+    "headerPop2Text": "The whole task was very enjoyable."
 }

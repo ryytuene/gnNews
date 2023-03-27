@@ -14,7 +14,7 @@ i18n.use(initReactI18next).init({
     },
     ns: ['translations', 'sidebar'],
     defaultNS: 'translations',
-    lng: 'en',
+    lng: 'pl',
     fallbackLng: 'en'
   });
 
