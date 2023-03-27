@@ -1,12 +1,13 @@
 import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay } from "@chakra-ui/react"
 import { useDispatch, useSelector } from "react-redux";
-import { selectCountries } from "../store/slices/newsSlice";
+import { selectCountries, selectCurrentCountry } from "../store/slices/newsSlice";
 import { changeSidebarVisibility, selectSidebarVisible } from "../store/slices/preferencesSlice";
 import { SidebarItem } from "./";
 
 export const Sidebar = () => {
     const sidebarVisible = useSelector(selectSidebarVisible);
     const countries = useSelector(selectCountries);
+    const currentCountry = useSelector(selectCurrentCountry);
     const dispatch = useDispatch();
     
     return (
@@ -15,9 +16,9 @@ export const Sidebar = () => {
             <DrawerOverlay />
             <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader>sidebar tytuł</DrawerHeader>
+                <DrawerHeader textAlign='center' ><strong>Wybierz kraj newsów</strong></DrawerHeader>
                 <DrawerBody>
-                    {countries && countries.map(item => <SidebarItem key={item.code} country={item.country} code={item.code} />)}
+                    {countries && countries.map(item => <SidebarItem key={item.code} country={item.country} code={item.code} active={currentCountry && currentCountry === item} />)}
                 </DrawerBody>
             </DrawerContent>
         </Drawer>

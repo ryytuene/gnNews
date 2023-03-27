@@ -6,8 +6,8 @@ export const Footer = () => {
     const clock = useSelector(selectClock);
 
     return (
-        <Box as='footer' >
-            <Flex justifyContent='space-between' >
+        <Box as='footer' pb={12} py={4} px={10} bgColor='#2E4F4F' color='white' >
+            <Flex justifyContent='space-between' wrap='wrap' gap={2} >
                 <Box>{clock}</Box>
                 <Box>artykuły</Box>
             </Flex>

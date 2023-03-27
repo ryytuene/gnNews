@@ -9,7 +9,7 @@ export const ContentItem = ({ news }) => {
     return (
         <>
             {displayFormat === 'grid' ?
-                <Card maxW='300px' onClick={onOpen} cursor='pointer' >
+                <Card maxW='300px' onClick={onOpen} cursor='pointer' shadow='md' bgColor='gray.100' >
                     <CardHeader>
                         <Text><strong>{news.title}</strong></Text>
                     </CardHeader>
@@ -21,7 +21,7 @@ export const ContentItem = ({ news }) => {
                         </Flex>
                     </CardBody>
                 </Card>
-                : <Card w='100%' onClick={onOpen} cursor='pointer' >
+                : <Card w='100%' onClick={onOpen} cursor='pointer' shadow='md' bgColor='gray.100' >
                     <CardBody>
                         <Text><strong>{news.title}</strong></Text>
                         <Flex justifyContent='space-between' >
@@ -42,7 +42,7 @@ export const ContentItem = ({ news }) => {
                         <Link href={news.url} isExternal={true} >Źródło</Link>
                     </ModalBody>
                     <ModalFooter>
-                        <Button onClick={onClose}>
+                        <Button onClick={onClose} _hover={{ backgroundColor: '#0E8388' }} >
                             Zamknij
                         </Button>
                     </ModalFooter>
