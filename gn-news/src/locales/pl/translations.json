@@ -1,0 +1,12 @@
+{
+    "author": "Autor",
+    "source": "Źródło",
+    "close": "Zamknij",
+    "error": "Coś poszło nie tak.",
+    "articlesQty": "Liczba artykułów",
+    "chooseCountry": "Wybierz kraj z którego chcesz zobaczyć wiadomości.",
+    "clickHere": "Kliknij tutaj",
+    "orClickNav": " albo w przycisk w lewym górnym rogu by otworzyć listę krajów.",
+    "404Text": "Strona nie istnieje.",
+    "chooseCountrySide": "Wybierz kraj newsów"
+}

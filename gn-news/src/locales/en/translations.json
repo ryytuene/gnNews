@@ -1,0 +1,12 @@
+{
+    "author": "Author",
+    "source": "Source",
+    "close": "Close",
+    "error": "Something went wrong.",
+    "articlesQty": "Number of articles",
+    "chooseCountry": "Select the country you want to see news from.",
+    "clickHere": "Click here",
+    "orClickNav": " or the button in the upper left corner to open the list of countries.",
+    "404Text": "Page does not exist.",
+    "chooseCountrySide": "Select country of the news"
+}

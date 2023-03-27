@@ -1,4 +1,5 @@
 import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay } from "@chakra-ui/react"
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCountries, selectCurrentCountry } from "../store/slices/newsSlice";
 import { changeSidebarVisibility, selectSidebarVisible } from "../store/slices/preferencesSlice";
@@ -9,6 +10,7 @@ export const Sidebar = () => {
     const countries = useSelector(selectCountries);
     const currentCountry = useSelector(selectCurrentCountry);
     const dispatch = useDispatch();
+    const { t } = useTranslation();
     
     return (
         <Drawer placement='left' onOpen={() => dispatch(changeSidebarVisibility())}
@@ -16,7 +18,7 @@ export const Sidebar = () => {
             <DrawerOverlay />
             <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader textAlign='center' ><strong>Wybierz kraj newsów</strong></DrawerHeader>
+                <DrawerHeader mt={3} textAlign='center' ><strong>{t('chooseCountrySide')}</strong></DrawerHeader>
                 <DrawerBody>
                     {countries && countries.map(item => <SidebarItem key={item.code} country={item.country} code={item.code} active={currentCountry && currentCountry === item} />)}
                 </DrawerBody>

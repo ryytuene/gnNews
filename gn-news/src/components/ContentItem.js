@@ -2,10 +2,12 @@ import { Button, Card, CardBody, CardHeader, Flex, Image, Link, Modal, ModalBody
 import { FiExternalLink } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import { selectDisplayFormat } from "../store/slices/preferencesSlice";
+import { useTranslation } from "react-i18next";
 
 export const ContentItem = ({ news }) => {
     const displayFormat = useSelector(selectDisplayFormat);
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const { t } = useTranslation();
 
     return (
         <>
@@ -43,12 +45,12 @@ export const ContentItem = ({ news }) => {
                         {news.content ? news.content : news.title}
                     </ModalBody>
                     <ModalBody flexDir='column' >
-                        <Text>Autor: {news.author}</Text>
-                        <Link href={news.url} isExternal={true} ><Flex alignItems='center' >Źródło<FiExternalLink /></Flex></Link>
+                        <Text>{t('author')}: {news.author}</Text>
+                        <Link href={news.url} isExternal={true} ><Flex alignItems='center' >{t('source')}<FiExternalLink /></Flex></Link>
                     </ModalBody>
                     <ModalFooter>
                         <Button onClick={onClose} _hover={{ backgroundColor: '#0E8388' }} >
-                            Zamknij
+                            {t('close')}
                         </Button>
                     </ModalFooter>
                 </ModalContent>
