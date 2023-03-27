@@ -29,7 +29,7 @@ export const Content = () => {
     } else return (
         <Flex flex={1} flexWrap='wrap'
             flexDir={displayFormat === 'grid' ? 'row' : 'column'}
-            justifyContent='space-evenly' alignItems='center'
+            justifyContent='space-evenly' alignItems='flex-start'
             gap={5} p={5} >
             {news && news.map(n => <ContentItem news={n} key={n.url} />)}
         </Flex>

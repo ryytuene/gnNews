@@ -1,4 +1,5 @@
 import { Button, Card, CardBody, CardHeader, Flex, Image, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
+import { FiExternalLink } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import { selectDisplayFormat } from "../store/slices/preferencesSlice";
 
@@ -13,6 +14,10 @@ export const ContentItem = ({ news }) => {
                     <CardHeader>
                         <Text><strong>{news.title}</strong></Text>
                     </CardHeader>
+                    {news.description &&
+                        <CardBody py={0} >
+                            {news.description}
+                        </CardBody>}
                     <CardBody>
                         {news.urlToImage && <Image src={news.urlToImage} />}
                         <Flex justifyContent='space-between' >
@@ -31,7 +36,7 @@ export const ContentItem = ({ news }) => {
                     </CardBody>
                 </Card>
             }
-            <Modal isOpen={isOpen} onClose={onClose} scrollBehavior='inside' >
+            <Modal isOpen={isOpen} onClose={onClose} scrollBehavior='inside' size='3xl' >
                 <ModalOverlay />
                 <ModalContent>
                     <ModalBody mt={3}>
@@ -39,7 +44,7 @@ export const ContentItem = ({ news }) => {
                     </ModalBody>
                     <ModalBody flexDir='column' >
                         <Text>Autor: {news.author}</Text>
-                        <Link href={news.url} isExternal={true} >Źródło</Link>
+                        <Link href={news.url} isExternal={true} ><Flex alignItems='center' >Źródło<FiExternalLink /></Flex></Link>
                     </ModalBody>
                     <ModalFooter>
                         <Button onClick={onClose} _hover={{ backgroundColor: '#0E8388' }} >
