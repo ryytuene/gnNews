@@ -8,7 +8,8 @@ const initialState = {
     currentCountry: null,
     news: [],
     isLoading: true,
-    error: null
+    error: null,
+    totalResults: 0
 }
 
 export const fetchNews = createAsyncThunk('countries/fetchNews', async code => {
@@ -42,6 +43,9 @@ const newsSlice = createSlice({
         },
         clearError: state => {
             state.error = null;
+        },
+        calculateTotalResults: state => {
+            state.totalResults = state.news.length;
         }
     },
     extraReducers: builder => {
@@ -68,7 +72,8 @@ export const selectCurrentCountry = state => state.news.currentCountry;
 export const selectNews = state => state.news.news
 export const selectNewsLoading = state => state.news.isLoading
 export const selectError = state => state.news.error
+export const selectTotalResults = state => state.news.totalResults
 
-export const { setCurrentCountry, clearError } = newsSlice.actions
+export const { setCurrentCountry, clearError, calculateTotalResults } = newsSlice.actions
 
 export default newsSlice.reducer

@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { Content, Error, Footer, Header, Home, NotFound, Sidebar } from "./components";
-import { clearError, fetchNews, selectCurrentCountry, selectError } from "./store/slices/newsSlice";
+import { calculateTotalResults, clearError, fetchNews, selectCurrentCountry, selectError, selectNews } from "./store/slices/newsSlice";
 import { refreshClock } from "./store/slices/preferencesSlice";
 
 function App() {
   const dispatch = useDispatch();
   const currentCountry = useSelector(selectCurrentCountry);
   const error = useSelector(selectError);
+  const news = useSelector(selectNews);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,6 +32,10 @@ function App() {
       dispatch(clearError());
     }
   }, [dispatch, navigate, error])
+
+  useEffect(() => {
+    dispatch(calculateTotalResults());
+  }, [dispatch, news])
 
   return (
     <Flex flexDirection='column' minH='$100vh' >
